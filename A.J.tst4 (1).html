@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///C:/Users/allys/Downloads/aj_lavagem_4.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>A.J Lavagem</title>
+<link href="./A.J tst4_files/css2" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#060810;min-height:100vh;display:flex;justify-content:center;padding:20px 16px 40px;font-family:'Outfit',sans-serif;}
+.card{background:#0b0f1a;border-radius:22px;padding:30px 18px 26px;width:100%;max-width:420px;position:relative;overflow:hidden;}
+.g1{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:280px;height:220px;background:radial-gradient(ellipse,rgba(14,165,233,0.18) 0%,transparent 70%);pointer-events:none;}
+.g2{position:absolute;bottom:-40px;right:-30px;width:180px;height:180px;background:radial-gradient(ellipse,rgba(16,185,129,0.13) 0%,transparent 70%);pointer-events:none;}
+
+/* badge */
+.badge{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:#0ea5e9;}
+.badge-txt{font-size:11px;font-weight:600;letter-spacing:2.5px;color:#0ea5e9;text-transform:uppercase;}
+
+/* headline */
+.headline{font-family:'Black Han Sans',sans-serif;font-size:34px;line-height:1.08;color:#fff;text-align:center;margin-bottom:5px;}
+.hl{color:#0ea5e9;}.hlg{color:#10b981;}
+.tagline{text-align:center;font-size:11px;color:rgba(255,255,255,.32);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;}
+.step{font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.28);text-transform:uppercase;text-align:center;margin-bottom:10px;}
+
+/* vehicle radio */
+input[type=radio]{display:none;}
+.vehicles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.vcard{display:flex;flex-direction:column;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:16px 10px 12px;cursor:pointer;transition:all .2s;}
+.vcard-icon{font-size:30px;line-height:1;}
+.vcard-lbl{font-size:12px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+
+#vm:checked ~ .vehicles label[for=vm] .vcard{background:rgba(14,165,233,.1);border-color:rgba(14,165,233,.5);}
+#vm:checked ~ .vehicles label[for=vm] .vcard-lbl{color:#38bdf8;}
+#vc:checked ~ .vehicles label[for=vc] .vcard{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.5);}
+#vc:checked ~ .vehicles label[for=vc] .vcard-lbl{color:#34d399;}
+
+/* plan radio */
+.plans-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;margin-bottom:16px;}
+.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.chip{font-size:13px;font-weight:700;padding:7px 15px;border-radius:50px;border:1px solid;cursor:pointer;display:block;}
+label[for=ps] .chip{color:#94a3b8;border-color:rgba(148,163,184,.3);background:rgba(148,163,184,.07);}
+label[for=pt] .chip{color:#38bdf8;border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.08);}
+label[for=pd] .chip{color:#fbbf24;border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.08);}
+#ps:checked ~ .plans-box label[for=ps] .chip{background:rgba(148,163,184,.22);border-color:#94a3b8;}
+#pt:checked ~ .plans-box label[for=pt] .chip{background:rgba(56,189,248,.22);border-color:#38bdf8;}
+#pd:checked ~ .plans-box label[for=pd] .chip{background:rgba(251,191,36,.22);border-color:#fbbf24;}
+
+/* detail blocks */
+.detail{display:none;border-top:1px solid rgba(255,255,255,.07);padding-top:12px;margin-top:2px;}
+#ps:checked ~ .plans-box .ds{display:block;}
+#pt:checked ~ .plans-box .dt{display:block;}
+#pd:checked ~ .plans-box .dd{display:block;}
+
+.dtitle{font-size:13px;font-weight:700;margin-bottom:6px;}
+.cs-t{color:#94a3b8;}.ct-t{color:#38bdf8;}.cd-t{color:#fbbf24;}
+.ddesc{font-size:12px;color:rgba(255,255,255,.42);line-height:1.55;margin-bottom:12px;}
+.prow{display:flex;gap:8px;margin-bottom:12px;}
+.ppill{flex:1;display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.05);border-radius:10px;padding:8px 4px;}
+.psize{font-size:9px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase;}
+.pval{font-family:'Black Han Sans',sans-serif;font-size:18px;line-height:1.2;}
+.pvs{color:#cbd5e1;}.pvt{color:#38bdf8;}.pvd{color:#fbbf24;}
+.sizenote{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:10px 12px;display:flex;align-items:flex-start;gap:8px;}
+.sizenote-txt{font-size:11px;color:rgba(255,255,255,.38);line-height:1.6;}
+
+/* CTA por veículo+plano */
+.cta-wrap{margin-bottom:16px;}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;background:#0ea5e9;border-radius:50px;padding:15px 24px;text-decoration:none;}
+.cta-label{font-size:14px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;}
+.arr{font-size:18px;color:#fff;}
+
+/* mostrar cta certo */
+.cta-block{display:none;}
+#vm:checked ~ #ps:checked ~ .cta-wrap .cta-ms{display:flex;}
+#vm:checked ~ #pt:checked ~ .cta-wrap .cta-mt{display:flex;}
+#vm:checked ~ #pd:checked ~ .cta-wrap .cta-md{display:flex;}
+#vc:checked ~ #ps:checked ~ .cta-wrap .cta-cs{display:flex;}
+#vc:checked ~ #pt:checked ~ .cta-wrap .cta-ct{display:flex;}
+#vc:checked ~ #pd:checked ~ .cta-wrap .cta-cd{display:flex;}
+
+/* fallback quando nada selecionado */
+.cta-default{display:flex;}
+#vm:checked ~ .cta-wrap .cta-default,
+#vc:checked ~ .cta-wrap .cta-default,
+#ps:checked ~ .cta-wrap .cta-default,
+#pt:checked ~ .cta-wrap .cta-default,
+#pd:checked ~ .cta-wrap .cta-default{display:none;}
+
+.question{text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.65);line-height:1.55;margin-bottom:20px;}
+.social{display:flex;align-items:center;justify-content:center;gap:20px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);}
+.sitem{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.35);font-weight:600;text-decoration:none;}
+.fnote{text-align:center;font-size:10px;color:rgba(255,255,255,.16);margin-top:12px;letter-spacing:.5px;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="g1"></div><div class="g2"></div>
+
+  <!-- radios veículo -->
+  <input type="radio" name="veiculo" id="vm">
+  <input type="radio" name="veiculo" id="vc">
+  <!-- radios plano -->
+  <input type="radio" name="plano" id="ps">
+  <input type="radio" name="plano" id="pt">
+  <input type="radio" name="plano" id="pd">
+
+  <div class="badge">
+    <div class="dot"></div>
+    <span class="badge-txt">A.J Lavagem</span>
+    <div class="dot"></div>
+  </div>
+
+  <div class="headline">Quer deixar sua<br><span class="hl">moto</span> ou <span class="hlg">carro</span><br>novinho?</div>
+  <div class="tagline">Escolha o nível certo pra você</div>
+
+  <div class="step">1. Selecione o veículo</div>
+  <div class="vehicles">
+    <label for="vm">
+      <div class="vcard">
+        <span class="vcard-icon">🏍️</span>
+        <span class="vcard-lbl">Moto</span>
+      </div>
+    </label>
+    <label for="vc">
+      <div class="vcard">
+        <span class="vcard-icon">🚗</span>
+        <span class="vcard-lbl">Carro</span>
+      </div>
+    </label>
+  </div>
+
+  <div class="step">2. Escolha o pacote</div>
+  <div class="plans-box">
+    <div class="chips">
+      <label for="ps"><span class="chip">Simples</span></label>
+      <label for="pt"><span class="chip">Técnica</span></label>
+      <label for="pd"><span class="chip">Detalhada</span></label>
+    </div>
+
+    <!-- SIMPLES -->
+    <div class="detail ds">
+      <div class="dtitle cs-t">Simples — limpeza completa</div>
+      <div class="ddesc">Sua moto ou carro sai limpinho, brilhante e com pneus pretinhos. Ideal pra manutenção rápida.</div>
+
+      <!-- preços moto simples -->
+      <div class="prow" id="pr-ms" style="display: flex;">
+        <div class="ppill"><span class="psize">P</span><span class="pval pvs">R$35</span></div>
+        <div class="ppill"><span class="psize">M</span><span class="pval pvs">R$50</span></div>
+        <div class="ppill"><span class="psize">G</span><span class="pval pvs">R$80</span></div>
+      </div>
+      <!-- preços carro simples -->
+      <div class="prow" id="pr-cs" style="display:none;">
+        <div class="ppill"><span class="psize">P</span><span class="pval pvs">R$65</span></div>
+        <div class="ppill"><span class="psize">M</span><span class="pval pvs">R$90</span></div>
+        <div class="ppill"><span class="psize">G</span><span class="pval pvs">R$130</span></div>
+      </div>
+
+      <div class="sizenote">
+        <span style="font-size:14px;flex-shrink:0;">ℹ️</span>
+        <span class="sizenote-txt" id="note-s">💡 P = motos pequenas (até 150cc) · M = médias (160–300cc) · G = grandes e custom.</span>
+      </div>
+    </div>
+
+    <!-- TÉCNICA -->
+    <div class="detail dt">
+      <div class="dtitle ct-t">Técnica — proteção forte</div>
+      <div class="ddesc">Cera + plásticos revitalizados + proteção forte. Transforma o visual do seu veículo!</div>
+
+      <div class="prow" id="pr-mt" style="display: flex;">
+        <div class="ppill"><span class="psize">P</span><span class="pval pvt">R$65</span></div>
+        <div class="ppill"><span class="psize">M</span><span class="pval pvt">R$95</span></div>
+        <div class="ppill"><span class="psize">G</span><span class="pval pvt">R$140</span></div>
+      </div>
+      <div class="prow" id="pr-ct" style="display:none;">
+        <div class="ppill"><span class="psize">P</span><span class="pval pvt">R$120</span></div>
+        <div class="ppill"><span class="psize">M</span><span class="pval pvt">R$160</span></div>
+        <div class="ppill"><span class="psize">G</span><span class="pval pvt">R$220</span></div>
+      </div>
+
+      <div class="sizenote">
+        <span style="font-size:14px;flex-shrink:0;">ℹ️</span>
+        <span class="sizenote-txt" id="note-t">💡 P = motos pequenas (até 150cc) · M = médias (160–300cc) · G = grandes e custom. Plásticos e cromados exigem mais atenção em motos maiores.</span>
+      </div>
+    </div>
+
+    <!-- DETALHADA -->
+    <div class="detail dd">
+      <div class="dtitle cd-t">Detalhada — como nova!</div>
+      <div class="ddesc">Proteção da pintura até 4 meses + tudo completo. Pacote imbatível, sai como nova!</div>
+
+      <div class="prow" id="pr-md" style="display: flex;">
+        <div class="ppill"><span class="psize">P</span><span class="pval pvd">R$120</span></div>
+        <div class="ppill"><span class="psize">M</span><span class="pval pvd">R$160</span></div>
+        <div class="ppill"><span class="psize">G</span><span class="pval pvd">R$230</span></div>
+      </div>
+      <div class="prow" id="pr-cd" style="display:none;">
+        <div class="ppill"><span class="psize">P</span><span class="pval pvd">R$180</span></div>
+        <div class="ppill"><span class="psize">M</span><span class="pval pvd">R$230</span></div>
+        <div class="ppill"><span class="psize">G</span><span class="pval pvd">R$300</span></div>
+      </div>
+
+      <div class="sizenote">
+        <span style="font-size:14px;flex-shrink:0;">ℹ️</span>
+        <span class="sizenote-txt" id="note-d">💡 P = motos pequenas (até 150cc) · M = médias (160–300cc) · G = grandes e custom. Motos com mais detalhes demandam mais tempo de polimento.</span>
+      </div>
+    </div>
+
+  </div><!-- plans-box -->
+
+  <div class="question">Qual deixa o veículo mais<br>brilhante e protegido?</div>
+
+  <!-- CTAs dinâmicos por combinação -->
+  <div class="cta-wrap">
+    <a class="cta cta-block cta-default" href="https://wa.me/556796917700" target="_blank">
+      <span class="cta-label">Agendar agora</span><span class="arr">→</span>
+    </a>
+    <a class="cta cta-block cta-ms" href="https://wa.me/556796917700?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+*Lavagem+Simples*+para+minha+*moto*.+%F0%9F%8F%8D%EF%B8%8F%0AQuero+que+ela+saia+limpinha%2C+brilhante+e+com+os+pneus+pretinhos%21+Qual+a+disponibilidade%3F" target="_blank">
+      <span class="cta-label">Agendar agora</span><span class="arr">→</span>
+    </a>
+    <a class="cta cta-block cta-mt" href="https://wa.me/556796917700?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+*Lavagem+T%C3%A9cnica*+para+minha+*moto*.+%F0%9F%8F%8D%EF%B8%8F%F0%9F%94%A5%0AQuero+aproveitar+a+cera%2C+revitaliza%C3%A7%C3%A3o+dos+pl%C3%A1sticos+e+a+prote%C3%A7%C3%A3o+forte.+Qual+a+disponibilidade%3F" target="_blank">
+      <span class="cta-label">Agendar agora</span><span class="arr">→</span>
+    </a>
+    <a class="cta cta-block cta-md" href="https://wa.me/556796917700?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+*Lavagem+Detalhada*+para+minha+*moto*.+%F0%9F%8F%8D%EF%B8%8F%F0%9F%91%91%0AQuero+o+pacote+completo+com+prote%C3%A7%C3%A3o+da+pintura.+Qual+a+disponibilidade%3F" target="_blank">
+      <span class="cta-label">Agendar agora</span><span class="arr">→</span>
+    </a>
+    <a class="cta cta-block cta-cs" href="https://wa.me/556796917700?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+*Lavagem+Simples*+para+meu+*carro*.+%F0%9F%9A%97%0AQuero+que+ele+saia+limpinho%2C+brilhante+e+com+os+pneus+pretinhos%21+Qual+a+disponibilidade%3F" target="_blank">
+      <span class="cta-label">Agendar agora</span><span class="arr">→</span>
+    </a>
+    <a class="cta cta-block cta-ct" href="https://wa.me/556796917700?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+*Lavagem+T%C3%A9cnica*+para+meu+*carro*.+%F0%9F%9A%97%F0%9F%94%A5%0AQuero+aproveitar+a+cera%2C+revitaliza%C3%A7%C3%A3o+dos+pl%C3%A1sticos+e+a+prote%C3%A7%C3%A3o+forte.+Qual+a+disponibilidade%3F" target="_blank">
+      <span class="cta-label">Agendar agora</span><span class="arr">→</span>
+    </a>
+    <a class="cta cta-block cta-cd" href="https://wa.me/556796917700?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+*Lavagem+Detalhada*+para+meu+*carro*.+%F0%9F%9A%97%F0%9F%91%91%0AQuero+o+pacote+completo+com+prote%C3%A7%C3%A3o+da+pintura.+Qual+a+disponibilidade%3F" target="_blank">
+      <span class="cta-label">Agendar agora</span><span class="arr">→</span>
+    </a>
+  </div>
+
+  <div class="social">
+    <a class="sitem" href="https://instagram.com/ajota.details" target="_blank">📷 @ajota.details</a>
+    <a class="sitem" href="https://wa.me/556796917700" target="_blank">💬 WhatsApp</a>
+  </div>
+  <div class="fnote">Toque em Moto ou Carro e escolha seu pacote</div>
+</div>
+
+<script>
+// Mostrar preços certos conforme veículo selecionado
+function updatePrices(){
+  var vm=document.getElementById('vm').checked;
+  var vc=document.getElementById('vc').checked;
+  var plans=['s','t','d'];
+  var notes={
+    moto:{
+      s:'💡 P = motos pequenas (até 150cc) · M = médias (160–300cc) · G = grandes e custom.',
+      t:'💡 P = motos pequenas (até 150cc) · M = médias (160–300cc) · G = grandes e custom. Plásticos e cromados exigem mais atenção em motos maiores.',
+      d:'💡 P = motos pequenas (até 150cc) · M = médias (160–300cc) · G = grandes e custom. Motos com mais detalhes demandam mais tempo de polimento.'
+    },
+    car:{
+      s:'💡 P = hatch pequeno (HB20, Mobi) · M = sedan/SUV médio · G = SUV grande, pickup ou van.',
+      t:'💡 P = hatch pequeno · M = sedan/SUV médio · G = SUV grande, pickup ou van. Plásticos e frisos variam conforme o modelo.',
+      d:'💡 P = hatch pequeno · M = sedan/SUV médio · G = SUV grande, pickup ou van. Carros com mais detalhes exigem mais cuidado.'
+    }
+  };
+  plans.forEach(function(p){
+    var mRow=document.getElementById('pr-m'+p);
+    var cRow=document.getElementById('pr-c'+p);
+    var noteEl=document.getElementById('note-'+p);
+    if(vm){
+      mRow.style.display='flex';
+      cRow.style.display='none';
+      noteEl.textContent=notes.moto[p];
+    } else if(vc){
+      mRow.style.display='none';
+      cRow.style.display='flex';
+      noteEl.textContent=notes.car[p];
+    } else {
+      mRow.style.display='none';
+      cRow.style.display='none';
+      noteEl.textContent='Selecione o veículo acima para ver os valores.';
+    }
+  });
+}
+document.getElementById('vm').addEventListener('change', updatePrices);
+document.getElementById('vc').addEventListener('change', updatePrices);
+</script>
+
+
+</body></html>
