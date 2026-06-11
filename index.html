@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>A.J Lavagem</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0;}body{background:#060810;min-height:100vh;display:flex;justify-content:center;padding:20px 16px 40px;font-family:'Outfit',sans-serif;}.card{background:#0b0f1a;border-radius:22px;padding:30px 18px 26px;width:100%;max-width:420px;position:relative;overflow:hidden;}.g1{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:280px;height:220px;background:radial-gradient(ellipse,rgba(14,165,233,0.18) 0%,transparent 70%);pointer-events:none;}.g2{position:absolute;bottom:-40px;right:-30px;width:180px;height:180px;background:radial-gradient(ellipse,rgba(16,185,129,0.13) 0%,transparent 70%);pointer-events:none;}.badge{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:18px;}.dot{width:6px;height:6px;border-radius:50%;background:#0ea5e9;}.badge-txt{font-size:11px;font-weight:600;letter-spacing:2.5px;color:#0ea5e9;text-transform:uppercase;}.headline{font-family:'Black Han Sans',sans-serif;font-size:34px;line-height:1.08;color:#fff;text-align:center;margin-bottom:5px;}.hl{color:#0ea5e9;}.hlg{color:#10b981;}.tagline{text-align:center;font-size:11px;color:rgba(255,255,255,.32);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;}.step{font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.28);text-transform:uppercase;text-align:center;margin-bottom:10px;}input[type=radio]{display:none;}.vehicles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}.vcard{display:flex;flex-direction:column;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:16px 10px 12px;cursor:pointer;transition:all .2s;}.vcard-icon{font-size:30px;line-height:1;}.vcard-lbl{font-size:12px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;}#vm:checked ~ .vehicles label[for=vm] .vcard{background:rgba(14,165,233,.1);border-color:rgba(14,165,233,.5);}#vm:checked ~ .vehicles label[for=vm] .vcard-lbl{color:#38bdf8;}#vc:checked ~ .vehicles label[for=vc] .vcard{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.5);}#vc:checked ~ .vehicles label[for=vc] .vcard-lbl{color:#34d399;}.plans-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;margin-bottom:16px;}.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:14px;}.chip{font-size:13px;font-weight:700;padding:7px 15px;border-radius:50px;border:1px solid;cursor:pointer;display:block;}label[for=ps] .chip{color:#94a3b8;border-color:rgba(148,163,184,.3);background:rgba(148,163,184,.07);}label[for=pt] .chip{color:#38bdf8;border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.08);}label[for=pd] .chip{color:#fbbf24;border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.08);}#ps:checked ~ .plans-box label[for=ps] .chip{background:rgba(148,163,184,.22);border-color:#94a3b8;}#pt:checked ~ .plans-box label[for=pt] .chip{background:rgba(56,189,248,.22);border-color:#38bdf8;}#pd:checked ~ .plans-box label[for=pd] .chip{background:rgba(251,191,36,.22);border-color:#fbbf24;}.detail{display:none;border-top:1px solid rgba(255,255,255,.07);padding-top:12px;}#ps:checked ~ .plans-box .ds{display:block;}#pt:checked ~ .plans-box .dt{display:block;}#pd:checked ~ .plans-box .dd{display:block;}.dtitle{font-size:13px;font-weight:700;margin-bottom:6px;}.cs-t{color:#94a3b8;}.ct-t{color:#38bdf8;}.cd-t{color:#fbbf24;}.ddesc{font-size:12px;color:rgba(255,255,255,.42);line-height:1.55;margin-bottom:12px;}.prow{display:flex;gap:8px;margin-bottom:12px;}.ppill{flex:1;display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.05);border-radius:10px;padding:8px 4px;}.psize{font-size:9px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase;}.pval{font-family:'Black Han Sans',sans-serif;font-size:18px;line-height:1.2;}.pvs{color:#cbd5e1;}.pvt{color:#38bdf8;}.pvd{color:#fbbf24;}.sizenote{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:10px 12px;display:flex;align-items:flex-start;gap:8px;}.sizenote-txt{font-size:11px;color:rgba(255,255,255,.38);line-height:1.6;}.cta-wrap{margin-bottom:16px;}.cta{display:flex;align-items:center;justify-content:center;gap:10px;background:#0ea5e9;border-radius:50px;padding:15px 24px;text-decoration:none;}.cta-lbl{font-size:14px;font-weight:700;color:#fff;}.cta-arrow{font-size:14px;color:#fff;transition:transform .2s;}.cta:hover .cta-arrow{transform:translateX(3px);}</style>
+</head>
+<body>
+<div class="card">
+  <div class="g1"></div>
+  <div class="g2"></div>
+  <div class="badge"><span class="dot"></span><span class="badge-txt">A.J Lavagem</span></div>
+  <h1 class="headline">Lavagem <span class="hl">Premium</span> em <span class="hlg">Casa</span></h1>
+  <p class="tagline">Cuidados rápidos e especiais para seu veículo sem sair de casa.</p>
+  <p class="step">Passo 1 de 2</p>
+  <input id="vm" type="radio" name="vehicle" checked>
+  <input id="vc" type="radio" name="vehicle">
+  <div class="vehicles">
+    <label for="vm">
+      <div class="vcard">
+        <span class="vcard-icon">🚘</span>
+        <span class="vcard-lbl">Carro</span>
+      </div>
+    </label>
+    <label for="vc">
+      <div class="vcard">
+        <span class="vcard-icon">🏍️</span>
+        <span class="vcard-lbl">Moto</span>
+      </div>
+    </label>
+  </div>
+  <input id="ps" type="radio" name="plan" checked>
+  <input id="pt" type="radio" name="plan">
+  <input id="pd" type="radio" name="plan">
+  <div class="plans-box">
+    <div class="chips">
+      <label for="ps"><span class="chip">Simples</span></label>
+      <label for="pt"><span class="chip">Top</span></label>
+      <label for="pd"><span class="chip">Deluxe</span></label>
+    </div>
+    <div class="detail ds">
+      <p class="dtitle cs-t">Plano Simples</p>
+      <p class="ddesc">Lavagem rápida com acabamento brilhante e higienização básica.</p>
+      <div class="prow">
+        <div class="ppill">
+          <span class="psize">Duração</span>
+          <span class="pval pvs">30 min</span>
+        </div>
+        <div class="ppill">
+          <span class="psize">Preço</span>
+          <span class="pval pvs">R$ 49</span>
+        </div>
+      </div>
+      <div class="sizenote">
+        <span class="sizenote-txt">Ideal para veículos pequenos e médios que precisam de limpeza rápida.</span>
+      </div>
+    </div>
+    <div class="detail dt">
+      <p class="dtitle ct-t">Plano Top</p>
+      <p class="ddesc">Lavagem detalhada com aplicação de cera e aspiração interna completa.</p>
+      <div class="prow">
+        <div class="ppill">
+          <span class="psize">Duração</span>
+          <span class="pval pvt">50 min</span>
+        </div>
+        <div class="ppill">
+          <span class="psize">Preço</span>
+          <span class="pval pvt">R$ 89</span>
+        </div>
+      </div>
+      <div class="sizenote">
+        <span class="sizenote-txt">Perfeito para quem busca limpeza profunda e proteção extra na pintura.</span>
+      </div>
+    </div>
+    <div class="detail dd">
+      <p class="dtitle cd-t">Plano Deluxe</p>
+      <p class="ddesc">Tratamento premium com polimento leve, cristalização e higiene total.</p>
+      <div class="prow">
+        <div class="ppill">
+          <span class="psize">Duração</span>
+          <span class="pval pvd">75 min</span>
+        </div>
+        <div class="ppill">
+          <span class="psize">Preço</span>
+          <span class="pval pvd">R$ 129</span>
+        </div>
+      </div>
+      <div class="sizenote">
+        <span class="sizenote-txt">Recomendado para veículos que precisam de cuidado completo e acabamento premium.</span>
+      </div>
+    </div>
+  </div>
+  <div class="cta-wrap">
+    <a class="cta" href="#">
+      <span class="cta-lbl">Agendar agora</span>
+      <span class="cta-arrow">➜</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>
